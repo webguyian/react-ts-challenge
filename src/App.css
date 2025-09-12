@@ -21,8 +21,9 @@
   text-align: center;
 }
 
-.step-content {
-  margin-bottom: 2rem;
+.form-content,
+.summary-content {
+  margin-bottom: 2.5rem;
 }
 
 .form-group {

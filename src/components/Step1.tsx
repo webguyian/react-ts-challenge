@@ -7,7 +7,7 @@ interface Step1Props {
 
 const Step1 = ({ formData, updateFormData }: Step1Props) => {
   return (
-    <div>
+    <div className="form-content">
       <h2>Bot Personality</h2>
       <div className="form-group">
         <label htmlFor="botRole">Bot Role</label>

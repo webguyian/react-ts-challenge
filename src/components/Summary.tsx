@@ -6,12 +6,12 @@ interface SummaryProps {
 
 const Summary = ({ formData }: SummaryProps) => {
   return (
-    <div>
+    <div className="summary-content">
       <h2>Summary</h2>
       <div className="summary-section">
         <h3>Bot Personality</h3>
         <p>
-          <strong>Bot Role:</strong> {formData.botRole.replace('-', ' ')}
+          <strong>Bot Role:</strong> {formData.botRole}
         </p>
         <p>
           <strong>Communication Style:</strong> {formData.communicationStyle}
@@ -27,8 +27,7 @@ const Summary = ({ formData }: SummaryProps) => {
       <div className="summary-section">
         <h3>Interaction Settings</h3>
         <p>
-          <strong>Memory Context:</strong>{' '}
-          {formData.memoryContext.replace('-', ' ')}
+          <strong>Memory Context:</strong> {formData.memoryContext}
         </p>
         <p>
           <strong>Response Time:</strong> {formData.responseTime}

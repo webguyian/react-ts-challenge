@@ -7,8 +7,25 @@ interface Step3Props {
 
 const Step3 = ({ formData, updateFormData }: Step3Props) => {
   return (
-    <div>
+    <div className="form-content">
       <h2>Account Creation</h2>
+      <div className="form-group">
+        <label htmlFor="accountType">Account Type</label>
+        <select
+          id="accountType"
+          value={formData.accountType}
+          onChange={(e) =>
+            updateFormData({
+              accountType: e.target.value as FormData['accountType'],
+            })
+          }
+        >
+          <option value="basic">Basic</option>
+          <option value="premium">Premium</option>
+          <option value="enterprise">Enterprise</option>
+        </select>
+      </div>
+
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
@@ -31,23 +48,6 @@ const Step3 = ({ formData, updateFormData }: Step3Props) => {
           required
           minLength={8}
         />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="accountType">Account Type</label>
-        <select
-          id="accountType"
-          value={formData.accountType}
-          onChange={(e) =>
-            updateFormData({
-              accountType: e.target.value as FormData['accountType'],
-            })
-          }
-        >
-          <option value="basic">Basic</option>
-          <option value="premium">Premium</option>
-          <option value="enterprise">Enterprise</option>
-        </select>
       </div>
     </div>
   );
