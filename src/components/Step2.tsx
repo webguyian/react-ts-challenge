@@ -7,7 +7,7 @@ interface Step2Props {
 
 const Step2 = ({ formData, updateFormData }: Step2Props) => {
   return (
-    <div>
+    <div className="form-content">
       <h2>Interaction Settings</h2>
       <div className="form-group">
         <label htmlFor="memoryContext">Memory Context</label>
@@ -75,54 +75,13 @@ const Step2 = ({ formData, updateFormData }: Step2Props) => {
       <div className="form-group">
         <label>Knowledge Base</label>
         <div className="checkbox-group">
-          <label>
-            <input
-              type="checkbox"
-              value="general"
-              checked={formData.knowledgeBase.includes('general')}
-              onChange={(e) => {
-                const value = e.target.value;
-                updateFormData({
-                  knowledgeBase: e.target.checked
-                    ? [...formData.knowledgeBase, value]
-                    : formData.knowledgeBase.filter((v) => v !== value),
-                });
-              }}
-            />
-            General Knowledge
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="technical"
-              checked={formData.knowledgeBase.includes('technical')}
-              onChange={(e) => {
-                const value = e.target.value;
-                updateFormData({
-                  knowledgeBase: e.target.checked
-                    ? [...formData.knowledgeBase, value]
-                    : formData.knowledgeBase.filter((v) => v !== value),
-                });
-              }}
-            />
-            Technical Docs
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="custom"
-              checked={formData.knowledgeBase.includes('custom')}
-              onChange={(e) => {
-                const value = e.target.value;
-                updateFormData({
-                  knowledgeBase: e.target.checked
-                    ? [...formData.knowledgeBase, value]
-                    : formData.knowledgeBase.filter((v) => v !== value),
-                });
-              }}
-            />
-            Custom Data
-          </label>
+          {/*
+           * TODO - Implement the following logic to:
+           * 1. Get the correct knowledge base options based on botRole
+           * 2. Render the checkboxes dynamically
+           * 3. Handle the checkbox changes to add and remove options
+           */}
+          <em>Add checkbox options here</em>
         </div>
       </div>
     </div>
