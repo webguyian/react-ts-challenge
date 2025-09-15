@@ -28,60 +28,47 @@ const Step2 = ({ formData, updateFormData }: Step2Props) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="responseTime">Response Time</label>
+        <label>Response Length</label>
         <div className="radio-group">
           <label>
             <input
               type="radio"
-              value="quick"
-              checked={formData.responseTime === 'quick'}
+              value="concise"
+              checked={formData.responseLength === 'concise'}
               onChange={(e) =>
                 updateFormData({
-                  responseTime: e.target.value as FormData['responseTime'],
+                  responseLength: e.target.value as FormData['responseLength'],
                 })
               }
             />
-            Quick & Simple
+            Concise
           </label>
           <label>
             <input
               type="radio"
-              value="moderate"
-              checked={formData.responseTime === 'moderate'}
+              value="balanced"
+              checked={formData.responseLength === 'balanced'}
               onChange={(e) =>
                 updateFormData({
-                  responseTime: e.target.value as FormData['responseTime'],
+                  responseLength: e.target.value as FormData['responseLength'],
                 })
               }
             />
-            Moderate
+            Balanced
           </label>
           <label>
             <input
               type="radio"
-              value="thorough"
-              checked={formData.responseTime === 'thorough'}
+              value="detailed"
+              checked={formData.responseLength === 'detailed'}
               onChange={(e) =>
                 updateFormData({
-                  responseTime: e.target.value as FormData['responseTime'],
+                  responseLength: e.target.value as FormData['responseLength'],
                 })
               }
             />
-            Thorough & Detailed
+            Detailed
           </label>
-        </div>
-      </div>
-
-      <div className="form-group">
-        <label>Knowledge Base</label>
-        <div className="checkbox-group">
-          {/*
-           * TODO - Implement the following logic to:
-           * 1. Get the correct knowledge base options based on botRole
-           * 2. Render the checkboxes dynamically
-           * 3. Handle the checkbox changes to add and remove options
-           */}
-          <em>Add checkbox options here</em>
         </div>
       </div>
     </div>

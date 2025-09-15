@@ -124,11 +124,12 @@ const Drawer = () => {
                     <code>currentStep</code>
                   </li>
                   <li>
-                    Include Previous and Next buttons to navigate between steps
+                    The <strong>Previous</strong> and <strong>Next</strong>{' '}
+                    buttons should navigate between steps
                   </li>
                   <li>
-                    Hide Previous button on first step and Next button on last
-                    step
+                    Hide <strong>Previous</strong> button on first step and{' '}
+                    <strong>Next</strong> button on last step
                   </li>
                 </ul>
               </li>
@@ -136,8 +137,8 @@ const Drawer = () => {
                 <h4>Form Validation</h4>
                 <ul>
                   <li>
-                    Implement <code>handleSubmit</code> to advance to next step
-                    if fields are valid
+                    Implement <code>nextStep</code> to advance to next step if
+                    fields are valid
                   </li>
                   <li>
                     Add <code>prevStep</code> function to go back to previous
@@ -149,11 +150,18 @@ const Drawer = () => {
                 <h4>Knowledge Base Options</h4>
                 <ul>
                   <li>
-                    Get the correct knowledge base options based on{' '}
+                    Render the knowledge base options as checkboxes based on{' '}
                     <code>botRole</code>
                   </li>
-                  <li>Render the checkboxes dynamically</li>
-                  <li>Handle checkbox changes to add and remove options</li>
+                  <li>
+                    Handle checkbox changes to add and remove options in the{' '}
+                    <code>formData</code> state
+                  </li>
+                  <li>
+                    Ensure the checkboxes reflect the current state of{' '}
+                    <code>formData</code> and don't persist values from previous
+                    selections
+                  </li>
                 </ul>
               </li>
             </ol>

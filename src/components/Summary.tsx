@@ -17,10 +17,8 @@ const Summary = ({ formData }: SummaryProps) => {
           <strong>Communication Style:</strong> {formData.communicationStyle}
         </p>
         <p>
-          <strong>Response Length:</strong> {formData.responseLength}
-        </p>
-        <p>
-          <strong>Language Model:</strong> {formData.languageModel}
+          <strong>Knowledge Base:</strong>{' '}
+          {formData.knowledgeBase.join(', ') || <em>None selected</em>}
         </p>
       </div>
 
@@ -30,21 +28,17 @@ const Summary = ({ formData }: SummaryProps) => {
           <strong>Memory Context:</strong> {formData.memoryContext}
         </p>
         <p>
-          <strong>Response Time:</strong> {formData.responseTime}
-        </p>
-        <p>
-          <strong>Knowledge Base:</strong>{' '}
-          {formData.knowledgeBase.join(', ') || 'None selected'}
+          <strong>Response Length:</strong> {formData.responseLength}
         </p>
       </div>
 
       <div className="summary-section">
         <h3>Account Details</h3>
         <p>
-          <strong>Username:</strong> {formData.username}
+          <strong>Account Type:</strong> {formData.accountType}
         </p>
         <p>
-          <strong>Account Type:</strong> {formData.accountType}
+          <strong>Username:</strong> {formData.username}
         </p>
       </div>
     </div>

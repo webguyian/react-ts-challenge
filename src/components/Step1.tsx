@@ -45,65 +45,16 @@ const Step1 = ({ formData, updateFormData }: Step1Props) => {
       </div>
 
       <div className="form-group">
-        <label>Response Length</label>
-        <div className="radio-group">
-          <label>
-            <input
-              type="radio"
-              value="concise"
-              checked={formData.responseLength === 'concise'}
-              onChange={(e) =>
-                updateFormData({
-                  responseLength: e.target.value as FormData['responseLength'],
-                })
-              }
-            />
-            Concise
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="balanced"
-              checked={formData.responseLength === 'balanced'}
-              onChange={(e) =>
-                updateFormData({
-                  responseLength: e.target.value as FormData['responseLength'],
-                })
-              }
-            />
-            Balanced
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="detailed"
-              checked={formData.responseLength === 'detailed'}
-              onChange={(e) =>
-                updateFormData({
-                  responseLength: e.target.value as FormData['responseLength'],
-                })
-              }
-            />
-            Detailed
-          </label>
+        <label>Knowledge Base</label>
+        <div className="checkbox-group">
+          {/*
+           * TODO - Implement the following logic to:
+           * 1. Get the correct knowledge base options based on botRole
+           * 2. Render the checkboxes dynamically
+           * 3. Handle the checkbox changes to add and remove options
+           */}
+          <em>Add checkbox options here</em>
         </div>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="languageModel">Language Model</label>
-        <select
-          id="languageModel"
-          value={formData.languageModel}
-          onChange={(e) =>
-            updateFormData({
-              languageModel: e.target.value as FormData['languageModel'],
-            })
-          }
-        >
-          <option value="basic">Basic</option>
-          <option value="standard">Standard</option>
-          <option value="advanced">Advanced</option>
-        </select>
       </div>
     </div>
   );

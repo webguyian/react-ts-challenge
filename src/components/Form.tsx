@@ -9,11 +9,9 @@ const Form = () => {
   const [formData, setFormData] = useState<FormData>({
     botRole: 'customer-service',
     communicationStyle: 'professional',
-    responseLength: 'balanced',
-    languageModel: 'standard',
-    memoryContext: 'last-3',
-    responseTime: 'moderate',
     knowledgeBase: [],
+    memoryContext: 'last-3',
+    responseLength: 'balanced',
     username: '',
     password: '',
     accountType: 'basic',
@@ -24,18 +22,18 @@ const Form = () => {
   };
 
   /*
-   * TODO - Implement handleSubmit and prevStep functions:
-   * 1. handleSubmit should advance to the next step, if all fields are valid
+   * TODO - Implement nextStep and prevStep functions:
+   * 1. nextStep should advance to the next step, if all fields are valid
    * 2. prevStep should go back to the previous step, if not on the first step
    */
-  const handleSubmit = () => {};
+  const nextStep = () => {};
 
   const prevStep = () => {};
 
   return (
     <div className="form-container">
       <h1>AI Bot Configuration 🤖</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={nextStep}>
         {/*
          * TODO - Implement step navigation and rendering logic:
          * 1. Render the appropriate step component based on currentStep

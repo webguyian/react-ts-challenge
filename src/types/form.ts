@@ -6,13 +6,11 @@ export interface FormData {
     | 'language-tutor'
     | 'technical-support';
   communicationStyle: 'professional' | 'casual' | 'friendly' | 'technical';
-  responseLength: 'concise' | 'balanced' | 'detailed';
-  languageModel: 'basic' | 'standard' | 'advanced';
+  knowledgeBase: string[];
 
   // Step 2
   memoryContext: 'none' | 'last-3' | 'last-5' | 'full';
-  responseTime: 'quick' | 'moderate' | 'thorough';
-  knowledgeBase: string[];
+  responseLength: 'concise' | 'balanced' | 'detailed';
 
   // Step 3
   username: string;
