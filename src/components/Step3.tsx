@@ -1,4 +1,6 @@
+import { useCallback } from 'react';
 import type { FormData } from '../types/form';
+import PasswordRules from './PasswordRules/PasswordRules';
 
 interface Step3Props {
   formData: FormData;
@@ -6,6 +8,13 @@ interface Step3Props {
 }
 
 const Step3 = ({ formData, updateFormData }: Step3Props) => {
+  const handleProgressUpdate = useCallback(
+    (progress: number) => {
+      updateFormData({ strongPassword: progress === 100 });
+    },
+    [updateFormData]
+  );
+
   return (
     <div className="form-content">
       <h2>Account Creation</h2>
@@ -46,9 +55,25 @@ const Step3 = ({ formData, updateFormData }: Step3Props) => {
           value={formData.password}
           onChange={(e) => updateFormData({ password: e.target.value })}
           required
-          minLength={8}
         />
       </div>
+
+      <div className="form-group">
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={(e) => updateFormData({ confirmPassword: e.target.value })}
+          required
+        />
+      </div>
+
+      <PasswordRules
+        password={formData.password}
+        confirmPassword={formData.confirmPassword}
+        onProgressUpdate={handleProgressUpdate}
+      />
     </div>
   );
 };

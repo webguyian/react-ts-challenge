@@ -13,9 +13,11 @@ export interface FormData {
   responseLength: 'concise' | 'balanced' | 'detailed';
 
   // Step 3
+  accountType: 'basic' | 'premium' | 'enterprise';
   username: string;
   password: string;
-  accountType: 'basic' | 'premium' | 'enterprise';
+  confirmPassword: string;
+  strongPassword?: boolean;
 }
 
 export const knowledgeBaseOptions = {

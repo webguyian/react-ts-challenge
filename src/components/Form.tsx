@@ -12,18 +12,32 @@ const Form = () => {
     knowledgeBase: [],
     memoryContext: 'last-3',
     responseLength: 'balanced',
+    accountType: 'basic',
     username: '',
     password: '',
-    accountType: 'basic',
+    confirmPassword: '',
   });
 
   const updateFormData = (data: Partial<FormData>) => {
     setFormData((prev) => ({ ...prev, ...data }));
   };
 
+  const validateStep = (step: number): boolean => {
+    switch (step) {
+      case 1:
+        return formData.knowledgeBase.length > 0;
+      case 2:
+        return true;
+      case 3:
+        return formData.strongPassword === true;
+      default:
+        return false;
+    }
+  };
+
   /*
    * TODO - Implement nextStep and prevStep functions:
-   * 1. nextStep should advance to the next step, if all fields are valid
+   * 1. nextStep should advance to the next step, if all fields are valid (hint: use validateStep)
    * 2. prevStep should go back to the previous step, if not on the first step
    */
   const nextStep = () => {};

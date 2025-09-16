@@ -149,7 +149,7 @@ const Drawer = () => {
                     <input type="checkbox" id="step-2a" />
                     <label htmlFor="step-2a">
                       Implement <code>nextStep</code> to advance to next step if
-                      fields are valid
+                      fields are valid (hint: use <code>validateStep</code>)
                     </label>
                   </li>
                   <li>
