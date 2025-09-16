@@ -120,16 +120,25 @@ const Drawer = () => {
                 <h4>Step Navigation</h4>
                 <ul>
                   <li>
-                    Render the appropriate step component based on{' '}
-                    <code>currentStep</code>
+                    <input type="checkbox" id="step-1a" />
+                    <label htmlFor="step-1a">
+                      Render the appropriate step component based on{' '}
+                      <code>currentStep</code>
+                    </label>
                   </li>
                   <li>
-                    The <strong>Previous</strong> and <strong>Next</strong>{' '}
-                    buttons should navigate between steps
+                    <input type="checkbox" id="step-1b" />
+                    <label htmlFor="step-1b">
+                      The <strong>Previous</strong> and <strong>Next</strong>{' '}
+                      buttons should navigate between steps
+                    </label>
                   </li>
                   <li>
-                    Hide <strong>Previous</strong> button on first step and{' '}
-                    <strong>Next</strong> button on last step
+                    <input type="checkbox" id="step-1c" />
+                    <label htmlFor="step-1c">
+                      Hide <strong>Previous</strong> button on first step and{' '}
+                      <strong>Next</strong> button on last step
+                    </label>
                   </li>
                 </ul>
               </li>
@@ -137,12 +146,18 @@ const Drawer = () => {
                 <h4>Form Validation</h4>
                 <ul>
                   <li>
-                    Implement <code>nextStep</code> to advance to next step if
-                    fields are valid
+                    <input type="checkbox" id="step-2a" />
+                    <label htmlFor="step-2a">
+                      Implement <code>nextStep</code> to advance to next step if
+                      fields are valid
+                    </label>
                   </li>
                   <li>
-                    Add <code>prevStep</code> function to go back to previous
-                    step
+                    <input type="checkbox" id="step-2b" />
+                    <label htmlFor="step-2b">
+                      Add <code>prevStep</code> function to go back to previous
+                      step
+                    </label>
                   </li>
                 </ul>
               </li>
@@ -150,17 +165,26 @@ const Drawer = () => {
                 <h4>Knowledge Base Options</h4>
                 <ul>
                   <li>
-                    Render the knowledge base options as checkboxes based on{' '}
-                    <code>botRole</code>
+                    <input type="checkbox" id="step-3a" />
+                    <label htmlFor="step-3a">
+                      Render the knowledge base options as checkboxes based on{' '}
+                      <code>botRole</code>
+                    </label>
                   </li>
                   <li>
-                    Handle checkbox changes to add and remove options in the{' '}
-                    <code>formData</code> state
+                    <input type="checkbox" id="step-3b" />
+                    <label htmlFor="step-3b">
+                      Handle checkbox changes to add and remove options in the{' '}
+                      <code>formData</code> state
+                    </label>
                   </li>
                   <li>
-                    Ensure the checkboxes reflect the current state of{' '}
-                    <code>formData</code> and don't persist values from previous
-                    selections
+                    <input type="checkbox" id="step-3c" />
+                    <label htmlFor="step-3c">
+                      Ensure the checkboxes reflect the current state of{' '}
+                      <code>formData</code> and don't persist values from
+                      previous selections
+                    </label>
                   </li>
                 </ul>
               </li>

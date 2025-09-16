@@ -137,11 +137,25 @@ dialog {
   margin-bottom: 0.5rem;
 }
 
-.instructions-content ol,
-.instructions-content ul {
+.instructions-content ol {
   padding-left: 1.5rem;
+}
+
+.instructions-content ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 .instructions-content li {
   margin-bottom: 0.5rem;
+}
+
+.instructions-content ul > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.instructions-content label {
+  display: block;
 }
