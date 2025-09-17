@@ -188,6 +188,41 @@ const Drawer = () => {
                   </li>
                 </ul>
               </li>
+              <li>
+                <h4>Password Rules</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="step-4a" />
+                    <label htmlFor="step-4a">
+                      Implement the validation for the password rules
+                    </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="step-4b" />
+                    <label htmlFor="step-4b">
+                      Common passwords come from the{' '}
+                      <code>commonPasswords</code> import of{' '}
+                      <code>common.txt</code>
+                    </label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4>Commit & Push</h4>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="step-5a" />
+                    <label htmlFor="step-5a">Commit your changes in git</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="step-5b" />
+                    <label htmlFor="step-5b">
+                      Push your changes to git remote (it will fail, that's okay
+                      &mdash; ignore)
+                    </label>
+                  </li>
+                </ul>
+              </li>
             </ol>
           </div>
         </div>
