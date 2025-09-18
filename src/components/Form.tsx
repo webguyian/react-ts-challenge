@@ -15,7 +15,7 @@ const Form = () => {
     accountType: 'basic',
     username: '',
     password: '',
-    confirmPassword: '',
+    confirmPassword: ''
   });
 
   const updateFormData = (data: Partial<FormData>) => {
@@ -50,8 +50,8 @@ const Form = () => {
       <form onSubmit={nextStep}>
         {/*
          * TODO - Implement step navigation and rendering logic:
-         * 1. Render the appropriate step component based on currentStep
-         * 2. Include Previous and Next buttons to navigate between steps
+         * 1. Render the appropriate step component based on the current step
+         * 2. Previous and Next buttons should navigate between steps
          * 3. Hide Previous button on the first step and Next button on the last step
          */}
         <Step1 formData={formData} updateFormData={updateFormData} />

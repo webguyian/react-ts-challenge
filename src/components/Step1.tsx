@@ -1,4 +1,4 @@
-import type { FormData } from '../types/form';
+import { knowledgeBaseOptions, type FormData } from '../types/form';
 
 interface Step1Props {
   formData: FormData;
@@ -33,7 +33,7 @@ const Step1 = ({ formData, updateFormData }: Step1Props) => {
           onChange={(e) =>
             updateFormData({
               communicationStyle: e.target
-                .value as FormData['communicationStyle'],
+                .value as FormData['communicationStyle']
             })
           }
         >
@@ -49,11 +49,28 @@ const Step1 = ({ formData, updateFormData }: Step1Props) => {
         <div className="checkbox-group">
           {/*
            * TODO - Implement the following logic to:
-           * 1. Get the correct knowledge base options based on botRole
-           * 2. Render the checkboxes dynamically
-           * 3. Handle the checkbox changes to add and remove options
+           * 1. Render the knowledge base options dynamically based on botRole
+           * 2. Fix the issue where previous selections persist after changing botRole
            */}
-          <em>Add checkbox options here</em>
+          {knowledgeBaseOptions['customer-service'].map((option) => (
+            <label key={option.value}>
+              <input
+                type="checkbox"
+                value={option.value}
+                checked={formData.knowledgeBase.includes(option.value)}
+                onChange={(event) => {
+                  updateFormData({
+                    knowledgeBase: event.target.checked
+                      ? [...formData.knowledgeBase, event.target.value]
+                      : formData.knowledgeBase.filter(
+                          (value) => value !== event.target.value
+                        )
+                  });
+                }}
+              />
+              {option.label}
+            </label>
+          ))}
         </div>
       </div>
     </div>

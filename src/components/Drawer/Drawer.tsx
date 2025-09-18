@@ -122,41 +122,32 @@ const Drawer = () => {
                   <li>
                     <input type="checkbox" id="step-1a" />
                     <label htmlFor="step-1a">
-                      Render the appropriate step component based on{' '}
-                      <code>currentStep</code>
+                      Render the appropriate step component based on the current
+                      step (<strong>Step 1</strong> → <strong>Step 2</strong> →{' '}
+                      <strong>Step 3</strong> → <strong>Summary</strong>)
                     </label>
                   </li>
                   <li>
                     <input type="checkbox" id="step-1b" />
                     <label htmlFor="step-1b">
-                      The <strong>Previous</strong> and <strong>Next</strong>{' '}
-                      buttons should navigate between steps
+                      Hide <strong>Previous</strong> button on first step and{' '}
+                      <strong>Next</strong> button on last step
                     </label>
                   </li>
                   <li>
                     <input type="checkbox" id="step-1c" />
                     <label htmlFor="step-1c">
-                      Hide <strong>Previous</strong> button on first step and{' '}
-                      <strong>Next</strong> button on last step
+                      Update <code>prevStep</code> and <code>nextStep</code>{' '}
+                      functions to navigate between steps
                     </label>
                   </li>
-                </ul>
-              </li>
-              <li>
-                <h4>Form Validation</h4>
-                <ul>
+
                   <li>
-                    <input type="checkbox" id="step-2a" />
-                    <label htmlFor="step-2a">
-                      Implement <code>nextStep</code> to advance to next step if
-                      fields are valid (hint: use <code>validateStep</code>)
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="step-2b" />
-                    <label htmlFor="step-2b">
-                      Add <code>prevStep</code> function to go back to previous
-                      step
+                    <input type="checkbox" id="step-1d" />
+                    <label htmlFor="step-1d">
+                      Call <code>validateStep</code> in the{' '}
+                      <code>nextStep</code> function to advance only if fields
+                      are valid
                     </label>
                   </li>
                 </ul>
@@ -165,25 +156,17 @@ const Drawer = () => {
                 <h4>Knowledge Base Options</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-3a" />
-                    <label htmlFor="step-3a">
-                      Render the knowledge base options as checkboxes based on{' '}
+                    <input type="checkbox" id="step-2a" />
+                    <label htmlFor="step-2a">
+                      Render the knowledge base options dynamically based on{' '}
                       <code>botRole</code>
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-3b" />
-                    <label htmlFor="step-3b">
-                      Handle checkbox changes to add and remove options in the{' '}
-                      <code>formData</code> state
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="step-3c" />
-                    <label htmlFor="step-3c">
-                      Ensure the checkboxes reflect the current state of{' '}
-                      <code>formData</code> and don't persist values from
-                      previous selections
+                    <input type="checkbox" id="step-2b" />
+                    <label htmlFor="step-2b">
+                      Fix the issue where previous selections persist after
+                      changing <code>botRole</code>
                     </label>
                   </li>
                 </ul>
@@ -192,14 +175,14 @@ const Drawer = () => {
                 <h4>Password Rules</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-4a" />
-                    <label htmlFor="step-4a">
+                    <input type="checkbox" id="step-3a" />
+                    <label htmlFor="step-3a">
                       Implement the validation for the password rules
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-4b" />
-                    <label htmlFor="step-4b">
+                    <input type="checkbox" id="step-3b" />
+                    <label htmlFor="step-3b">
                       Common passwords come from the{' '}
                       <code>commonPasswords</code> import of{' '}
                       <code>common.txt</code>
@@ -211,12 +194,12 @@ const Drawer = () => {
                 <h4>Commit & Push</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-5a" />
-                    <label htmlFor="step-5a">Commit your changes in git</label>
+                    <input type="checkbox" id="step-4a" />
+                    <label htmlFor="step-4a">Commit your changes in git</label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-5b" />
-                    <label htmlFor="step-5b">
+                    <input type="checkbox" id="step-4b" />
+                    <label htmlFor="step-4b">
                       Push your changes to git remote (it will fail, that's okay
                       &mdash; ignore)
                     </label>
