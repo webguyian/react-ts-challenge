@@ -1,9 +1,42 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState, type FormEvent } from 'react';
 import './Drawer.css';
+
+type CheckboxState = {
+  [key: string]: boolean;
+};
 
 const Drawer = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
+  const getCheckboxState = (): CheckboxState => {
+    const saved = localStorage.getItem('drawerCheckboxes');
+    return saved
+      ? JSON.parse(saved)
+      : {
+          step1a: false,
+          step1b: false,
+          step1c: false,
+          step1d: false,
+          step2a: false,
+          step2b: false,
+          step3a: false,
+          step3b: false,
+          step4a: false,
+          step4b: false
+        };
+  };
+  const [checkboxes, setCheckboxes] = useState<CheckboxState>(
+    getCheckboxState()
+  );
+
+  const handleCheckboxChange = (event: FormEvent<HTMLInputElement>) => {
+    const { name, checked } = event.currentTarget;
+
+    setCheckboxes((prevCheckboxes) => ({
+      ...prevCheckboxes,
+      [name]: checked
+    }));
+  };
 
   const getFocusableElements = (element: HTMLElement) => {
     return element.querySelectorAll<HTMLElement>(
@@ -45,6 +78,13 @@ const Drawer = () => {
     previousActiveElement.current?.focus();
   };
 
+  const handleClickOutside = (e: React.MouseEvent) => {
+    const drawerContent = dialogRef.current?.querySelector('.drawer-content');
+    if (!drawerContent?.contains(e.target as Node)) {
+      closeDrawer();
+    }
+  };
+
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
@@ -78,12 +118,9 @@ const Drawer = () => {
     return () => dialog.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleClickOutside = (e: React.MouseEvent) => {
-    const drawerContent = dialogRef.current?.querySelector('.drawer-content');
-    if (!drawerContent?.contains(e.target as Node)) {
-      closeDrawer();
-    }
-  };
+  useEffect(() => {
+    localStorage.setItem('drawerCheckboxes', JSON.stringify(checkboxes));
+  }, [checkboxes]);
 
   return (
     <>
@@ -120,7 +157,13 @@ const Drawer = () => {
                 <h4>Step Navigation</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-1a" />
+                    <input
+                      type="checkbox"
+                      id="step-1a"
+                      name="step1a"
+                      checked={checkboxes.step1a}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-1a">
                       Render the appropriate step component based on the current
                       step (<strong>Step 1</strong> → <strong>Step 2</strong> →{' '}
@@ -128,14 +171,26 @@ const Drawer = () => {
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-1b" />
+                    <input
+                      type="checkbox"
+                      id="step-1b"
+                      name="step1b"
+                      checked={checkboxes.step1b}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-1b">
                       Hide <strong>Previous</strong> button on first step and{' '}
                       <strong>Next</strong> button on last step
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-1c" />
+                    <input
+                      type="checkbox"
+                      id="step-1c"
+                      name="step1c"
+                      checked={checkboxes.step1c}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-1c">
                       Update <code>prevStep</code> and <code>nextStep</code>{' '}
                       functions to navigate between steps
@@ -143,7 +198,13 @@ const Drawer = () => {
                   </li>
 
                   <li>
-                    <input type="checkbox" id="step-1d" />
+                    <input
+                      type="checkbox"
+                      id="step-1d"
+                      name="step1d"
+                      checked={checkboxes.step1d}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-1d">
                       Call <code>validateStep</code> in the{' '}
                       <code>nextStep</code> function to advance only if fields
@@ -156,14 +217,26 @@ const Drawer = () => {
                 <h4>Knowledge Base Options</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-2a" />
+                    <input
+                      type="checkbox"
+                      id="step-2a"
+                      name="step2a"
+                      checked={checkboxes.step2a}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-2a">
                       Render the knowledge base options dynamically based on{' '}
                       <code>botRole</code>
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-2b" />
+                    <input
+                      type="checkbox"
+                      id="step-2b"
+                      name="step2b"
+                      checked={checkboxes.step2b}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-2b">
                       Fix the issue where previous selections persist after
                       changing <code>botRole</code>
@@ -175,13 +248,25 @@ const Drawer = () => {
                 <h4>Password Rules</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-3a" />
+                    <input
+                      type="checkbox"
+                      id="step-3a"
+                      name="step3a"
+                      checked={checkboxes.step3a}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-3a">
                       Implement the validation for the password rules
                     </label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-3b" />
+                    <input
+                      type="checkbox"
+                      id="step-3b"
+                      name="step3b"
+                      checked={checkboxes.step3b}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-3b">
                       Common passwords come from the{' '}
                       <code>commonPasswords</code> import of{' '}
@@ -194,11 +279,23 @@ const Drawer = () => {
                 <h4>Commit & Push</h4>
                 <ul>
                   <li>
-                    <input type="checkbox" id="step-4a" />
+                    <input
+                      type="checkbox"
+                      id="step-4a"
+                      name="step4a"
+                      checked={checkboxes.step4a}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-4a">Commit your changes in git</label>
                   </li>
                   <li>
-                    <input type="checkbox" id="step-4b" />
+                    <input
+                      type="checkbox"
+                      id="step-4b"
+                      name="step4b"
+                      checked={checkboxes.step4b}
+                      onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="step-4b">
                       Push your changes to git remote (it will fail, that's okay
                       &mdash; ignore)
