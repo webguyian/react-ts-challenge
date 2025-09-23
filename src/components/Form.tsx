@@ -23,6 +23,7 @@ const Form = () => {
   };
 
   const validateStep = (step: number): boolean => {
+    // Validation logic for each step — no need to modify
     switch (step) {
       case 1:
         return formData.knowledgeBase.length > 0;
@@ -47,7 +48,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <h1>AI Bot Configuration 🤖</h1>
-      <form onSubmit={nextStep}>
+      <form>
         {/*
          * TODO - Implement step navigation and rendering logic:
          * 1. Render the appropriate step component based on the current step
@@ -62,7 +63,9 @@ const Form = () => {
           <button onClick={prevStep} type="button">
             Previous
           </button>
-          <button type="submit">Next</button>
+          <button onClick={nextStep} type="button">
+            Next
+          </button>
         </div>
       </form>
     </div>
