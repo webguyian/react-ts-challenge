@@ -10,22 +10,6 @@ const Step1 = ({ formData, updateFormData }: Step1Props) => {
     <div className="form-content">
       <h2>Bot Personality</h2>
       <div className="form-group">
-        <label htmlFor="botRole">Bot Role</label>
-        <select
-          id="botRole"
-          value={formData.botRole}
-          onChange={(e) =>
-            updateFormData({ botRole: e.target.value as FormData['botRole'] })
-          }
-        >
-          <option value="customer-service">Customer Service</option>
-          <option value="personal-assistant">Personal Assistant</option>
-          <option value="language-tutor">Language Tutor</option>
-          <option value="technical-support">Technical Support</option>
-        </select>
-      </div>
-
-      <div className="form-group">
         <label htmlFor="communicationStyle">Communication Style</label>
         <select
           id="communicationStyle"
@@ -41,6 +25,22 @@ const Step1 = ({ formData, updateFormData }: Step1Props) => {
           <option value="casual">Casual</option>
           <option value="friendly">Friendly</option>
           <option value="technical">Technical</option>
+        </select>
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="botRole">Bot Role</label>
+        <select
+          id="botRole"
+          value={formData.botRole}
+          onChange={(e) =>
+            updateFormData({ botRole: e.target.value as FormData['botRole'] })
+          }
+        >
+          <option value="customer-service">Customer Service</option>
+          <option value="personal-assistant">Personal Assistant</option>
+          <option value="language-tutor">Language Tutor</option>
+          <option value="technical-support">Technical Support</option>
         </select>
       </div>
 

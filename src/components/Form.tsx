@@ -7,8 +7,8 @@ import Summary from './Summary';
 
 const Form = () => {
   const [formData, setFormData] = useState<FormData>({
-    botRole: 'customer-service',
     communicationStyle: 'professional',
+    botRole: 'customer-service',
     knowledgeBase: [],
     memoryContext: 'last-3',
     responseLength: 'balanced',
@@ -38,12 +38,12 @@ const Form = () => {
 
   /*
    * TODO - Implement nextStep and prevStep functions:
-   * 1. nextStep should advance to the next step, if all fields are valid (hint: use validateStep)
-   * 2. prevStep should go back to the previous step, if not on the first step
+   * 1. prevStep should go back to the previous step, if not on the first step
+   * 2. nextStep should advance to the next step, if all fields are valid (hint: use validateStep)
    */
-  const nextStep = () => {};
-
   const prevStep = () => {};
+
+  const nextStep = () => {};
 
   return (
     <div className="form-container">

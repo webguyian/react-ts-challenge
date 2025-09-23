@@ -11,10 +11,10 @@ const Summary = ({ formData }: SummaryProps) => {
       <div className="summary-section">
         <h3>Bot Personality</h3>
         <p>
-          <strong>Bot Role:</strong> {formData.botRole}
+          <strong>Communication Style:</strong> {formData.communicationStyle}
         </p>
         <p>
-          <strong>Communication Style:</strong> {formData.communicationStyle}
+          <strong>Bot Role:</strong> {formData.botRole}
         </p>
         <p>
           <strong>Knowledge Base:</strong>{' '}
