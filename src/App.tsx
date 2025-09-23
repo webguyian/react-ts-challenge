@@ -1,12 +1,12 @@
 import './App.css';
 import Form from './components/Form';
-import Drawer from './components/Drawer/Drawer';
+import Instructions from './components/Instructions/Instructions';
 
 function App() {
   return (
     <div className="app">
       <Form />
-      <Drawer />
+      <Instructions />
     </div>
   );
 }

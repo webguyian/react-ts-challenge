@@ -1,11 +1,11 @@
 import { useRef, useEffect, useState, type FormEvent } from 'react';
-import './Drawer.css';
+import './Instructions.css';
 
 type CheckboxState = {
   [key: string]: boolean;
 };
 
-const Drawer = () => {
+const Instructions = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
   const getCheckboxState = (): CheckboxState => {
@@ -311,4 +311,4 @@ const Drawer = () => {
   );
 };
 
-export default Drawer;
+export default Instructions;
