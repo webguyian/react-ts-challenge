@@ -21,10 +21,6 @@
   text-align: center;
 }
 
-.checkbox-group > em {
-  color: #df2b0a;
-}
-
 .form-content,
 .summary-content {
   margin-bottom: 2.5rem;
@@ -82,6 +78,10 @@
 
 .form-navigation button:last-of-type {
   margin-left: auto;
+}
+
+.summary-content ~ .form-navigation button:last-of-type {
+  margin-left: 0;
 }
 
 .form-navigation button {
