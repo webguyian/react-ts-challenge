@@ -79,6 +79,14 @@ export const Instructions = () => {
             Display game over state with final move count
           </label>
         </div>
+        <p>
+          You may not finish in the time allotted, and that's okay —{' '}
+          <strong>
+            we're most interested in hearing how you think through the problem
+            and explain your approach
+          </strong>
+          .
+        </p>
       </details>
     </div>
   );

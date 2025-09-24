@@ -10,6 +10,8 @@ The game should:
 - [ ] Detect when all cards are matched to end the game
 - [ ] Display game over state with final move count
 
+You may not finish in the time allotted, and that's okay — **we're most interested in hearing how you think through the problem and explain your approach**.
+
 ## Implementation Details
 
 Your task is to implement the core game logic for the Memory Game. The UI components are already created for you, and you need to add the missing functionality to make the game interactive and functional.
